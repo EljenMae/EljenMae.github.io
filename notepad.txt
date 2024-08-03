@@ -1,0 +1,5 @@
+djangoenv\Scripts\activate
+cd myportfolio
+python manage.py runserver
+
+python manage.py startapp ___(name of file)
