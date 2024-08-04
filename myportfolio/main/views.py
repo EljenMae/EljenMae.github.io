@@ -5,4 +5,6 @@ from .models import Service, Contact, Portfolio
 def index(response, id):
     return HttpResponse("<h1>%s</h1>" %id)
 
+def home(response):
+    pass
 
