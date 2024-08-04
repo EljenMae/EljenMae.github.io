@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Contact, Portfolio
 # Create your views here.
-def index(response):
-    return HttpResponse("<h1>tech with tim!</h1>")
+def index(response, id):
+    return HttpResponse("<h1>%s</h1>" %id)
 
-def v1(response):
-    return HttpResponse("<h1>tech with tim View 1!!</h1>")
+
