@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from .models import Service, Contact, Portfolio
 # Create your views here.
 def index(response, id):
-    return HttpResponse("<h1>%s</h1>" %id)
+    return render(response,"main/base.html", {})
 
 def home(response):
-    pass
+    return render(response,"main/home.html", {})
 
