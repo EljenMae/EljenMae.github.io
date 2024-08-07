@@ -3,3 +3,8 @@ cd myportfolio
 python manage.py runserver
 
 python manage.py startapp ___(name of file)
+
+python manage.py tailwind start
+
+username: admin
+pass: 1234
