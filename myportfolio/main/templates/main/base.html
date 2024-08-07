@@ -1,6 +1,8 @@
+{% load static tailwind_tags %}
 <html>
     <head>
         <title>{% block title %}{% endblock %}</title>
+        {% tailwind_css %}
     </head>
 
     <body>
