@@ -1,0 +1,17 @@
+/* google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+  font-family: "Bitter", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  scroll-padding-top: 2rem;
+  scroll-behavior: smooth;
+}
+:root{
+    --background-color: #282726;
+    --text-color:#64b7d8;
+    --light-color: #ecf0ec;
+}
