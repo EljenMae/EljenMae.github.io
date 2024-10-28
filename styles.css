@@ -1,7 +1,14 @@
 /* google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+/* title */
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap');
+/*second */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oleo+Script:wght@400;700&display=swap');
+/* third */
+@import url('https://fonts.googleapis.com/css2?family=Anaheim:wght@400..800&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oleo+Script:wght@400;700&display=swap');
+
+/* Main */
 *{
-  font-family: "Bitter", serif;
+  font-family: "Anaheim", "Oleo Script", "Fira Sans", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,7 +18,27 @@
   scroll-behavior: smooth;
 }
 :root{
-    --background-color: #282726;
-    --text-color:#64b7d8;
-    --light-color: #ecf0ec;
+    --background-color: #161a1e;
+    --text-color:#e5ebee;
+    --light-color:#af6d14;
+}
+img {
+    width: 100%;
+}
+body {
+    color: var(--text-color);
+}
+*::selection {
+    color: #fff;
+    background: var(--background-color);
+}
+html::-webkit-scrollbar {
+    width: 0.5rem;
+}
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+    background: var(--background-color);
+    border-radius: 5rem;
 }
