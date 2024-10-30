@@ -18,13 +18,17 @@
   scroll-behavior: smooth;
 }
 :root{
-    --background-color: #161a1e;
-    --text-color:#e5ebee;
-    --light-color:#af6d14;
+    --background-color: #3d244c;
+    --light-color:#fbf8f5;
+    --pink-color:#e9598d;
+}
+section {
+    padding: 50px 10%;
 }
 img {
     width: 100%;
 }
+
 body {
     color: var(--text-color);
 }
@@ -41,4 +45,41 @@ html::-webkit-scrollbar-track {
 html::-webkit-scrollbar-thumb {
     background: var(--background-color);
     border-radius: 5rem;
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--background-color);
+    padding: 18px 10%;
+    transition: 0.2s;
+}
+.logo {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--pink-color);
+}
+.navbar {
+    display: flex;
+}
+.navbar a {
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: var(--light-color);
+    font-weight: 500;
+}
+.navbar a:hover {
+    background: var(--light-color);
+    color: var(--pink-color);
+}
+#menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
 }
