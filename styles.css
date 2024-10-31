@@ -83,3 +83,49 @@ header{
     z-index: 10001;
     display: none;
 }
+.home {
+    background-color: var(--background-color);
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    align-items: center;
+    gap: 1.5rem;
+}
+.home-text span {
+    color: var(--pink-color);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.home-text h1 {
+    color: var(--light-color);
+    font-size: 3.4rem;
+
+}
+.home-text h2 {
+    color: var(--light-color);
+    font-size: 1.6rem;
+    font-weight: bolder;
+}
+.home-text p {
+    color: var(--pink-color);
+    font-weight: 400;
+    margin: 0.7rem 0 1rem;
+}
+.home-img {
+    padding: 40px;
+}
+.btn{
+    display: inline-block;
+    background: var(--pink-color);
+    padding: 0.8rem 2rem;
+    color: var(--light-color);
+    font-weight: 500;
+}
+.btn:hover{
+    background: var(--light-color);
+    color: var(--pink-color);
+    letter-spacing: 2px;
+    transition: 0.10s;
+}
