@@ -129,3 +129,240 @@ header{
     letter-spacing: 2px;
     transition: 0.10s;
 }
+.about{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1.5rem;
+}
+.about-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.about-title h1 {
+    color: var(--pink-color);
+    font-size: 2.2rem;
+}
+.about-title span{
+    border-bottom: 3px solid var(--pink-color);
+}
+.about-title h2 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+.about-img {
+    width: 150px;
+    height: 150px;
+    margin-top: 2rem;
+}
+.about-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    background: var(--pink-color);
+}
+.socials {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+.socials a .bx {
+    margin-right: 1rem;
+    font-size: 24px;
+    color: var(--light-color);
+    padding: 10px;
+    border-radius: 4px;
+    background: var(--pink-color);
+}
+.socials a .bx:hover {
+    background: var(--light-color);
+    color: var(--pink-color);
+}
+.about-text p {
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+.services {
+    background-color: var(--background-color);
+}
+.heading {
+    text-align: center;
+}
+.heading span{
+    border-bottom: 3px solid var(--light-color);
+}
+.heading h1 {
+    font-size: 1.7rem;
+    font-weight: bolder;
+    color: var(--light-color);
+}
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(17rem,1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+}
+.services-container .box {
+    text-align: center;
+    border: 2px solid var(--pink-color);
+    padding: 20px;
+    border-radius: 0 2rem 0 0;
+    box-shadow: 10px 11px 11px rgb(14 55 54 / 15%);
+}
+.services-container .box:hover {
+    background: var(--light-color);
+    color: var(--pink-color);
+    transition: 0.2s;
+}
+.services-container .box .bx {
+    padding: 10px;
+    color: var(--light-color);
+    font-size: 24px;
+    background: var(--pink-color);
+    border-radius: 4px;
+}
+.services-container .box:hover .bx{
+    color: var(--light-color);
+    background: var(--pink-color);
+}
+.services-container .box h2{
+    color: var(--light-color);
+    font-size: 1.1rem;
+    margin: 1rem 0 0.5rem;
+}
+.services-container .box:hover h2{
+    color: var(--pink-color);
+}
+.services-container .box p{
+    color: var(--pink-color);
+}
+.services-container .box:hover p{
+    color: var(--pink-color);
+}
+.services-container .box i{
+    color: var(--light-color);
+}
+.portfolio {
+    background-color: var(--light-color);
+}
+.heading-portfolio {
+    text-align: center;
+    color: var(--background-color);
+}
+.heading-portfolio span{
+    border-bottom: 3px solid var(--background-color);
+}
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(17rem,1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.portfolio-container .box {
+    position: relative;
+    height: 220px;
+    box-shadow: 10px 11px 11px rgb(14 55 54 / 15%);
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+.portfolio-container .box .box-img {
+    width: 100%;
+    height: 100%;
+}
+.portfolio-container .box .box-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.portfolio-container .box .content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: rgb(28, 40, 68, 0.8);
+}
+.portfolio-container .box .content .bx {
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 4px;
+    background: var(--pink-color);
+    color: var(--light-color);
+}
+.portfolio-container .box .content h3 {
+    color: var(--light-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 10px;
+}
+.portfolio-container .box:hover .content {
+    top: 0;
+    transition: 0.2s;
+}
+.contact {
+    background-color: var(--background-color);
+}
+.heading-contact{
+    text-align: center;
+    color: var(--pink-color);
+}
+.heading-contact span{
+    border-bottom: 3px solid var(--pink-color);
+}
+.contact-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.contact-form form {
+    position: relative;
+    width: 400px;
+}
+form input, 
+form textarea {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    outline: none;
+    background: var(--light-color);
+    margin-bottom:  0.5rem;
+    border-radius: 4px;
+    color: var(--background-color);
+}
+form input::placeholder,
+form textarea::placeholder {
+    color: var(--pink-color);
+}
+textarea {
+    resize: none;
+    height: 200px;
+}
+form .sent-btn {
+    max-width: 110px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--pink-color);
+}   
+form .sent-btn:hover {
+    background: var(--pink-color);
+    color: var(--light-color);
+}
+.copyright {
+    padding: 20px;
+    text-align: center;
+    color: var(--light-color);
+    background: var(--pink-color);
+}
