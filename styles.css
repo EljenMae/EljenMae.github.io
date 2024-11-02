@@ -312,6 +312,8 @@ header{
 }
 .contact {
     background-color: var(--background-color);
+    min-height: 85vh;
+
 }
 .heading-contact{
     text-align: center;
