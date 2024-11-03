@@ -59,6 +59,9 @@ header{
     padding: 18px 10%;
     transition: 0.2s;
 }
+header.shadow {
+    box-shadow: 0 0 4px rgb(14 55 54 / 15%);
+}
 .logo {
     font-size: 1.1rem;
     font-weight: 600;
@@ -367,4 +370,68 @@ form .sent-btn:hover {
     text-align: center;
     color: var(--light-color);
     background: var(--pink-color);
+}
+/* Making Responsive*/
+/* For tablets*/
+@media (max-width:786px) {
+    .home {
+        grid-template-columns: 1fr; /* Stack items vertically */
+        text-align: center;
+    }
+    
+    .home-img {
+        order: -1; /* Place image above the text */
+        margin-bottom: 15px;
+    }
+    header{
+        padding: 11px 4%;
+    }
+    #menu-icon {
+        display: initial;
+        color: var(--light-color);
+    }
+    .navbar {
+        position: absolute;
+        top: -500px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--background-color);
+        box-shadow: 0 4px 4 rgba(0, 0, 0, 0.1);
+        transition: top 0.3s ease; /* Smooth transition */
+        text-align: left;
+    }
+    /* Add this for when menu is open */
+    .navbar.active {
+        top: 45px; /* Adjusted to header height */
+    }
+    .navbar a {
+        padding: 1rem;
+        border-left: 2px solid var(--light-color);
+        margin: 1rem;
+        display: block;
+    }
+    .navbar a:hover {
+        color: var(--pink-color);
+        background: var(--light-color);
+        border: none;
+    }
+    #menu-icon.bx-x {
+        color:var(--light-color);
+    }
+}
+/* For phones*/
+@media (max-width: 480px) {
+    .home {
+        grid-template-columns: 1fr; /* Stack items vertically */
+        text-align: center;
+    }
+    .home-img {
+        order: -1; /* Place image above the text */
+        margin-bottom: 15px;
+    }
+    #menu-icon {
+        display: initial;
+    }
 }
