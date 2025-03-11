@@ -6,6 +6,8 @@
 /* third */
 @import url('https://fonts.googleapis.com/css2?family=Anaheim:wght@400..800&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oleo+Script:wght@400;700&display=swap');
 
+/*Logo */
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
 /* Main */
 *{
   font-family: "Anaheim", "Oleo Script", "Fira Sans", sans-serif;
@@ -63,9 +65,11 @@ header.shadow {
     box-shadow: 0 0 4px rgb(14 55 54 / 15%);
 }
 .logo {
-    font-size: 1.1rem;
+    font-family: "Oleo Script";
+    font-style: normal;
+    font-size: 2rem;
     font-weight: 600;
-    color: var(--pink-color);
+    color: var(--light-color);
 }
 .navbar {
     display: flex;
