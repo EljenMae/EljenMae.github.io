@@ -110,7 +110,8 @@ header.shadow {
     font-size: 3.4rem;
 
 }
-.home-text h2 {
+
+.home-text h3 {
     color: var(--light-color);
     font-size: 1.6rem;
     font-weight: bolder;
@@ -137,6 +138,8 @@ header.shadow {
     transition: 0.10s;
 }
 .about{
+    width: 100%;
+    min-height: 95vh;
     padding-top: 5rem;
     padding-bottom: 5rem;
     display: grid;
@@ -195,6 +198,8 @@ header.shadow {
     margin-bottom: 1rem;
 }
 .services {
+    width: 100%;
+    min-height: 97vh;
     background-color: var(--background-color);
 }
 .heading {
@@ -256,6 +261,8 @@ header.shadow {
     color: var(--light-color);
 }
 .portfolio {
+    width: 100%;
+    min-height: 97vh;
     background-color: var(--light-color);
 }
 .heading-portfolio {
