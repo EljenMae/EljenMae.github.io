@@ -376,8 +376,37 @@ form .sent-btn:hover {
     background: var(--pink-color);
     color: var(--light-color);
 }
+.footer{
+    padding: 50px;
+    background-color: var(--pink-color);
+    color: var(--light-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+}
+.FooterName {
+    flex: 2;
+}
+.link {
+    flex: 0.5;
+}
+.socialMedia {
+    flex: 0.5;
+}
+
+.link a{
+    font-size: 1rem;
+    color: var(--light-color);
+}
+
+.socialMedia a{
+    font-size: 1rem;
+    color: var(--light-color);
+}
+
 .copyright {
-    padding: 20px;
+    padding: 5px;
     text-align: center;
     color: var(--light-color);
     background: var(--pink-color);
