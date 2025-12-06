@@ -384,15 +384,19 @@ form .sent-btn:hover {
     justify-content: space-between;
     align-items: flex-start;
     gap: 60px;
+    flex-wrap: wrap;
 }
 .FooterName {
     flex: 2;
+    min-width: 200px;
 }
 .link {
     flex: 0.5;
+    min-width: 120px;
 }
 .socialMedia {
     flex: 0.5;
+    min-width: 120px;
 }
 
 .link a{
@@ -460,6 +464,21 @@ form .sent-btn:hover {
     #menu-icon.bx-x {
         color:var(--light-color);
     }
+    .footer {
+        flex-direction: column; 
+        align-items: center;    
+        gap: 20px;             
+        padding: 30px;         
+        text-align: center;
+    }
+    .FooterName,
+    .link,
+    .socialMedia {
+        flex: none; 
+        min-width: 0;
+        width: 100%;
+    }
+
 }
 /* For phones*/
 @media (max-width: 480px) {
