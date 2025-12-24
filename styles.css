@@ -387,16 +387,42 @@ form .sent-btn:hover {
     padding: 50px;
     background-color: var(--pink-color);
     color: var(--light-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
     gap: 60px;
-    flex-wrap: wrap;
+    padding-top: 3rem;
 }
 .FooterName {
     flex: 2;
     min-width: 200px;
 }
+.FooterName h3{
+    font-size: 1.5rem;
+    font-weight: 2rem;
+}
+.footer-description p{
+    flex: 2;
+    min-width: 3rem;
+    padding-top: 1rem;
+}
+.socials-logo {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+.socials-logo a .bx {
+    margin-right: 1rem;
+    font-size: 24px;
+    color: var(--light-color);
+    padding: 10px;
+    border-radius: 4px;
+    background: var(--background-color);
+}
+.socials-logo a .bx:hover {
+    background: var(--light-color);
+    color: var(--pink-color);
+}
+
 .link {
     flex: 0.5;
     min-width: 120px;
@@ -414,6 +440,43 @@ form .sent-btn:hover {
 .socialMedia a{
     font-size: 1rem;
     color: var(--light-color);
+}
+
+.footer-email p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.email-form {
+    display: flex;
+    gap: 10px;
+}
+
+.email-form input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.email-form button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    background: var(--background-color);
+    color: var(--light-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.email-form button:hover {
+    background: var(--light-color);
+    color: var(--pink-color);
+}
+.directButtons-navigation a:hover {
+    color: var(--background-color);
 }
 
 .copyright {
@@ -471,7 +534,7 @@ form .sent-btn:hover {
     #menu-icon.bx-x {
         color:var(--light-color);
     }
-    .footer {
+    /* .footer {
         flex-direction: column; 
         align-items: center;    
         gap: 20px;             
@@ -484,7 +547,7 @@ form .sent-btn:hover {
         flex: none; 
         min-width: 0;
         width: 100%;
-    }
+    }/*
     /*.about-img img{
     width: 200px;
     height: 200px;
