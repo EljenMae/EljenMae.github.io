@@ -159,6 +159,9 @@ header.shadow {
 .content-title span{
     border-bottom: 3px solid var(--pink-color);
 }
+.about-text {
+    padding-top: 5rem;
+}
 .about-text h5 {
     font-size: 1.5rem;
     font-weight: 200;
