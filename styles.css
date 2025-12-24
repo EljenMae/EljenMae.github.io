@@ -65,10 +65,10 @@ header.shadow {
     box-shadow: 0 0 4px rgb(14 55 54 / 15%);
 }
 .logo {
-    font-family: "Oleo Script";
+    /*font-family: "Oleo Script";*/
     font-style: normal;
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 800;
     color: var(--light-color);
 }
 .navbar {
@@ -144,42 +144,48 @@ header.shadow {
     padding-bottom: 5rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-    gap: 1.5rem;
+    /*gap: 1.5rem;*/
 }
-.about-title{
+/*.about-title{
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-}
-.about-title h1 {
+}*/
+.content-title h1 {
     color: var(--pink-color);
-    font-size: 2.2rem;
+    font-size: 3rem;
+    
 }
-.about-title span{
+.content-title span{
     border-bottom: 3px solid var(--pink-color);
 }
-.about-title h2 {
-    font-size: 2rem;
-    font-weight: 500;
+.about-text h5 {
+    font-size: 1.5rem;
+    font-weight: 200;
 }
 .about-img {
-    width: 150px;
-    height: 150px;
-    margin-top: 2rem;
+       padding: 40px;
 }
 .about-img img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     background: var(--pink-color);
+
+}
+.about-content .about-description{
+
+}
+.socials-header{
+    margin-top: 0.5rem;
+    font-size: 1rem;
 }
 .socials {
     display: flex;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 .socials a .bx {
     margin-right: 1rem;
@@ -194,6 +200,7 @@ header.shadow {
     color: var(--pink-color);
 }
 .about-text p {
+    padding-top: 20px;
     text-align: justify;
     margin-bottom: 1rem;
 }
@@ -478,7 +485,12 @@ form .sent-btn:hover {
         min-width: 0;
         width: 100%;
     }
-
+    /*.about-img img{
+    width: 200px;
+    height: 200px;
+    margin-top: 1rem;
+    justify-content: flex-start;
+}*/
 }
 /* For phones*/
 @media (max-width: 480px) {
