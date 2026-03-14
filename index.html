@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <!--Box Icons-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--EmailJS-->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
    <!--header-->
@@ -22,6 +24,7 @@
         <li><a href="#contact">Contact</a></li>
     </ul>
    </header>
+
    <!--Home-->
    <section class="home" id="home">
     <div class="home-text">
@@ -32,7 +35,7 @@
         <a href="#contact" class="btn">Hire Me</a>
     </div>
     <div class="home-img">
-        <img src="img/profile.png" alt="" class="img">
+        <img src="img/profile.png" alt="profile_image" class="img">
     </div>
    </section><!--End of Home Section-->
    
@@ -40,7 +43,22 @@
    <section class="about" id="about">
     <div class="about-title">
         <div class="about-img">
-            <img src="img/profile3.png" alt=""> 
+            <img src="img/profile3.png" alt="profile image of me"> 
+        </div>
+        <!-- Stats under photo -->
+        <div class="about-stats">
+            <div class="stat-item">
+                <span class="stat-number">1+</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">3+</span>
+                <span class="stat-label">Services Offered</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Projects Done</span>
+            </div>
         </div>
     </div>
     
@@ -51,13 +69,37 @@
         </div>
         <div class="about-content"> 
             <div class="about-decription">
-                 <p>I currently working as Junior Developer at Exco Company for more than 7 months, now. During my working period I was able to create a Dynamic Excel. I also do research and marketing for our company app.</p>
-            <p>I am passionate about learning and building user-friendly web solutions and dynamic excel solutions that make a difference for the users lives. </p>
-            <!--carousel of logo ere-->
-            <div class="programming-logo">
+                <p>I am currently working as a Junior Developer at Exco Company for more than 7 months. During my working period I was able to create a Dynamic Excel. I also do research and marketing for our company app.</p>
+                <p>I am passionate about learning and building user-friendly web solutions and dynamic Excel solutions that make a difference in users' lives.</p>
 
+                <!-- Skills -->
+                <div class="skills-section">
+                    <h3 class="skills-title">My Skills</h3>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>HTML & CSS</span><span>85%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>JavaScript</span><span>60%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>Figma / UI Design</span><span>80%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-label"><span>VBA / Excel / Power BI / Microsoft Lists</span><span>65%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+                    </div>
+                </div>
             </div>
+
+            <!-- Buttons row -->
+            <div class="about-buttons">
+                <a href="#contact" class="btn">Hire Me</a>
+                <a href="#" class="btn btn-outline2">Download CV</a>
             </div>
+
             <h3 class="socials-header">Social Media</h3>
             <div class="socials">
                 <a href="https://github.com/EljenMae"><i class='bx bxl-github'></i></a>
@@ -77,49 +119,27 @@
     <div class="services-container">
         <!--Box 1-->
         <div class="box">
-            <i class='bx bxl-figma' ></i>
+            <i class='bx bxl-figma'></i>
             <h2>Figma Designs</h2>
             <p>Creating intuitive, visually appealing, and user-friendly designs. From user research and wireframing to high-fidelity mockups and prototypes, I focus on delivering seamless, functional, and engaging experiences tailored to meet user needs.</p>
         </div>
         <!--Box 2-->
         <div class="box">
-            <i class='bx bxs-objects-vertical-bottom' ></i>
-            <h2>Data Science</h2>
-            <p>Analyzing and interpreting complex data to uncover insights that drive informed decision-making. I provide data-driven solutions with a focus on statistical analysis, data visualization, and machine learning to help businesses optimize performance.</p>
-        </div>
-        <!--Box 3-->
-        <div class="box">
-            <i class='bx bx-code' ></i>
+            <i class='bx bx-code'></i>
             <h2>Front-End Development</h2>
             <p>Building responsive, interactive, and user-friendly websites using HTML, CSS, and JavaScript. I ensure seamless, dynamic user experiences across devices, with a focus on clean code and performance optimization.</p>
         </div>
+        <!--Box 3-->
+        <div class="box">
+            <i class='bx bx-file'></i>
+            <h2>Microsoft Office Automation</h2>
+            <p>I create automated solutions using Power BI, Excel, and Microsoft Lists that make data entry easier, automate calculations, and help businesses manage and analyze their data more efficiently.</p>
+        </div>
         <!--Box 4-->
         <div class="box">
-            <i class='bx bx-check-shield' ></i>
-            <h2>Software Developer</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In numquam error ex? Totam, provident error, tempora vero similique enim fuga non magni molestias veniam laboriosam soluta, deleniti ad doloribus praesentium.</p>
-        </div>
-         <!--Box 5-->
-        <div class="box">
-            <i class='bx bx-check-shield' ></i>
-            <h2>Social Media Management</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia, totam non repellat, autem, iure reprehenderit qui suscipit consequuntur dolorem ea magnam? Cupiditate perferendis dolorum architecto. Sapiente modi eaque dolore animi?</p>
-        </div>
-           <!--Box 5-->
-        <div class="box">
-            <i class='bx bx-check-shield' ></i>
-            <h2>Visual Basic for Applications</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore explicabo ut inventore quidem odit porro, delectus quod et laboriosam animi aliquid a at? Nam ab, minus obcaecati laudantium aliquam dolorum.</p>
-        </div>
-        <div class="box">
-            <i class='bx bx-check-shield' ></i>
-            <h2>Cybersecurity</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore explicabo ut inventore quidem odit porro, delectus quod et laboriosam animi aliquid a at? Nam ab, minus obcaecati laudantium aliquam dolorum.</p>
-        </div>
-          <div class="box">
-            <i class='bx bx-check-shield' ></i>
-            <h2>Java Developer</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore explicabo ut inventore quidem odit porro, delectus quod et laboriosam animi aliquid a at? Nam ab, minus obcaecati laudantium aliquam dolorum.</p>
+            <i class='bx bx-code'></i>
+            <h2>Google Sheet Automation</h2>
+            <p>I specialize in converting Microsoft Excel automation into Google Sheets, replicating formulas, calculations, design, and functionality so businesses can use their automated systems in a cloud-based environment.</p>
         </div>
     </div>
    </section><!--End of Services-->
@@ -135,137 +155,173 @@
                 <img src="img/Example.png" alt="">
             </div>
             <div class="content">
-                <a href="https://eljenmae.github.io/simple-website/"><i class='bx bx-link' ></i></a>
+                <a href="https://eljenmae.github.io/simple-website/"><i class='bx bx-link'></i></a>
                 <h3>Coffee Shop</h3>
             </div>
-        </div><!--end of box-->
+        </div>
         <div class="box">
             <div class="box-img">
                 <img src="img/Still-creating-here.png" alt="">
             </div>
             <div class="content">
-                <a href="#"><i class='bx bx-link' ></i></a>
+                <a href="#"><i class='bx bx-link'></i></a>
                 <h3>Work 2</h3>
             </div>
-        </div><!--end of box-->
+        </div>
         <div class="box">
             <div class="box-img">
                 <img src="img/Still-creating-here.png" alt="">
             </div>
             <div class="content">
-                <a href="#"><i class='bx bx-link' ></i></a>
+                <a href="#"><i class='bx bx-link'></i></a>
                 <h3>Work 3</h3>
             </div>
-        </div><!--end of box-->
+        </div>
         <div class="box">
             <div class="box-img">
                 <img src="img/Still-creating-here.png" alt="">
             </div>
             <div class="content">
-                <a href="#"><i class='bx bx-link' ></i></a>
+                <a href="#"><i class='bx bx-link'></i></a>
                 <h3>Work 4</h3>
             </div>
-        </div><!--end of box-->
+        </div>
         <div class="box">
             <div class="box-img">
                 <img src="img/Still-creating-here.png" alt="">
             </div>
             <div class="content">
-                <a href="#"><i class='bx bx-link' ></i></a>
+                <a href="#"><i class='bx bx-link'></i></a>
                 <h3>Work 5</h3>
             </div>
-        </div><!--end of box-->
+        </div>
         <div class="box">
             <div class="box-img">
                 <img src="img/Still-creating-here.png" alt="">
             </div>
             <div class="content">
-                <a href="#"><i class='bx bx-link' ></i></a>
+                <a href="#"><i class='bx bx-link'></i></a>
                 <h3>Work 6</h3>
             </div>
-        </div><!--end of box-->
+        </div>
         <div class="box">
             <div class="box-img">
                 <img src="img/Still-creating-here.png" alt="">
             </div>
             <div class="content">
-                <a href="#"><i class='bx bx-link' ></i></a>
+                <a href="#"><i class='bx bx-link'></i></a>
                 <h3>Work 7</h3>
             </div>
-        </div><!--end of box-->
+        </div>
         <div class="box">
             <div class="box-img">
                 <img src="img/Still-creating-here.png" alt="">
             </div>
             <div class="content">
-                <a href="#"><i class='bx bx-link' ></i></a>
+                <a href="#"><i class='bx bx-link'></i></a>
                 <h3>Work 8</h3>
             </div>
-        </div><!--end of box-->
+        </div>
     </div>
-   </section>
-   <!--End of Portfolio-->
-  
+   </section><!--End of Portfolio-->
 
    <!--Start of Contact-->
    <section class="contact" id="contact">
     <div class="heading-contact">
-        <h1><span>Contact</span> Us</h1>
+        <h1><span>Contact</span> Me</h1>
+        <p class="contact-subtitle">Have a project in mind? Let's work together!</p>
+    </div>
+
+    <div class="contact-wrapper">
+        <!-- Left: contact info cards -->
+        <div class="contact-info">
+            <div class="info-card">
+                <i class='bx bx-envelope'></i>
+                <div>
+                    <h4>Email</h4>
+                    <p><a href="mailto:eljen4545@gmail.com">eljen4545@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="info-card">
+                <i class='bx bx-phone'></i>
+                <div>
+                    <h4>Phone</h4>
+                    <p>+639554616786</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <i class='bx bx-map'></i>
+                <div>
+                    <h4>Location</h4>
+                    <p>Zamboanga City, Philippines</p>
+                </div>
+            </div>
         </div>
+
+        <!-- Right: form -->
         <div class="contact-form">
-            <form action="">
-                <input type="text" placeholder="Your Full Name" required>
-                <input type="email" name="" id="" placeholder="Your Email" required>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Write Message Here..." required></textarea>
-                <input type="submit" value="Send" class="sent-btn">
+            <form id="contact-form">
+                <div class="form-row">
+                    <input type="text" id="from_name" name="from_name" placeholder="Your Full Name" required>
+                    <input type="email" id="from_email" name="from_email" placeholder="Your Email" required>
+                </div>
+                <input type="text" id="subject" name="subject" placeholder="Subject">
+                <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+                <button type="submit" class="sent-btn" id="send-btn">
+                    <span id="btn-text">Send Message</span>
+                    <i class='bx bx-send'></i>
+                </button>
+                <p id="form-feedback" class="form-feedback"></p>
             </form>
         </div>
-   </section>
-   <!--End of Contact-->
+    </div>
+   </section><!--End of Contact-->
 
 <!--Footer-->
 <section class="footer">
-    <!--column 1-->
+    <!--column 1: Bio-->
     <div class="FooterName">
         <h3>Eljen Mae Augusto</h3>
         <div class="footer-description">
             <p>Junior Developer at Exco Company with 7+ months of experience. I create user-friendly web solutions, dynamic Excel tools, and support research and marketing for our company app.</p>
         </div>
-           <div class="socials-logo">
-                <a href="https://github.com/EljenMae"><i class='bx bxl-github'></i></a>
-                <a href="https://dribbble.com/Eljen"><i class='bx bxl-dribbble'></i></a>
-                <a href="https://www.behance.net/eljenmaeaugusto"><i class='bx bxl-behance'></i></a>
-                <a href="https://www.linkedin.com/in/eljen-mae-augusto-547600261/"><i class='bx bxl-linkedin'></i></a>
-            </div>
-    </div>
-    <!--column 2-->
-    <div class="link">
-        <h4 class="footerHeader">Quick Links</h4>
-            <ul class="directButtons-navigation">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <div class="socials-logo">
+            <a href="https://github.com/EljenMae"><i class='bx bxl-github'></i></a>
+            <a href="https://dribbble.com/Eljen"><i class='bx bxl-dribbble'></i></a>
+            <a href="https://www.behance.net/eljenmaeaugusto"><i class='bx bxl-behance'></i></a>
+            <a href="https://www.linkedin.com/in/eljen-mae-augusto-547600261/"><i class='bx bxl-linkedin'></i></a>
         </div>
     </div>
-    <!--column 3-->
+
+    <!--column 2: Quick Links-->
+    <div class="link">
+        <h4 class="footerHeader">Quick Links</h4>
+        <ul class="directButtons-navigation">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!--column 3: Newsletter / Get in Touch-->
     <div class="footer-email">
         <h4 class="footerHeader">Get in Touch</h4>
-        <p>Leave your email and I’ll get back to you.</p>
-
-        <form class="email-form">
-            <input type="email" placeholder="Your email" required>
-            <button type="submit">Send</button>
+        <p>Drop your email and I'll get back to you as soon as possible.</p>
+        <form class="email-form" id="footer-email-form">
+            <input type="email" id="footer-email-input" placeholder="Your email address" required>
+            <button type="submit" id="footer-send-btn">
+                <i class='bx bx-send'></i>
+            </button>
         </form>
+        <p id="footer-feedback" class="footer-feedback"></p>
     </div>
-</section>
+</section><!--End of footer-->
 
-<!--End of footer-->
    <!--Copyright-->
    <div class="copyright">
-    <p>&#169; Eljen All Rights Reserve</p>
+    <p>&#169; Eljen All Rights Reserved</p>
    </div>
 
    <!--Javascript-->
