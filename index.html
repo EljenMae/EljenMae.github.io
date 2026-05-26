@@ -10,6 +10,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!--EmailJS-->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- AOS Library for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
    <!--header-->
@@ -22,84 +24,91 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
+        <!-- Dark Mode Toggle in Navigation -->
+        <li class="theme-toggle-nav">
+            <i class='bx bx-moon' id="theme-icon"></i>
+        </li>
     </ul>
    </header>
 
    <!--Home-->
    <section class="home" id="home">
-    <div class="home-text">
+    <div class="home-text" data-aos="fade-up" data-aos-duration="1000">
         <span>Hello,</span>
         <h1>I am Eljen Mae</h1>
         <h3>Junior Software Developer</h3>
         <p>I am passionate about learning and creating user-friendly web solutions that make a difference. With a focus on growth and problem-solving, I enjoy turning ideas into functional and efficient designs.</p>
         <a href="#contact" class="btn">Hire Me</a>
     </div>
-    <div class="home-img">
+    <div class="home-img" data-aos="fade-left" data-aos-duration="1000">
         <img src="img/profile.png" alt="profile_image" class="img">
     </div>
    </section><!--End of Home Section-->
    
    <!--About-->
    <section class="about" id="about">
-    <div class="about-title">
+    <div class="about-title" data-aos="fade-up" data-aos-duration="1000">
         <div class="about-img">
             <img src="img/profile3.png" alt="profile image of me"> 
         </div>
         <div class="about-stats">
-            <div class="stat-item">
-                <span class="stat-number">1+</span>
+            <div class="stat-item" data-aos-delay="100">
+                <!--<span class="stat-symbol">+</span>-->
+                <span class="stat-number counter" data-target="1.5">1.5</span>
                 <span class="stat-label">Years Experience</span>
             </div>
-            <div class="stat-item">
-                <span class="stat-number">3+</span>
+            <div class="stat-item" data-aos-delay="200">
+                 <!--<span class="stat-symbol">+</span>-->
+                <span class="stat-number counter" data-target="3">0</span>
                 <span class="stat-label">Services Offered</span>
             </div>
-            <div class="stat-item">
-                <span class="stat-number">5+</span>
+            <div class="stat-item" data-aos-delay="300">
+                 <!--<span class="stat-symbol">+</span>-->
+                <span class="stat-number counter" data-target="5">0</span>
                 <span class="stat-label">Projects Done</span>
             </div>
         </div>
     </div>
     
     <div class="about-text">
-        <div class="content-title">
+        <div class="content-title" data-aos="fade-up">
             <h5><span>About</span> Me</h5>
             <h1>Introduction</h1>
         </div>
         <div class="about-content"> 
-            <div class="about-decription">
-                <p>I am currently working as a Junior Developer at Exco Company for more than 7 months. During my working period I was able to create a Dynamic Excel. I also do research and marketing for our company app.</p>
+            <div class="about-decription" data-aos="fade-up" data-aos-delay="200">
+                <p>I worked as a Junior Developer at Exco Company for 1 year and 5 months. During my time there, I was able to create dynamic Excel systems and develop automation in Google Sheets. I also handled research and marketing for the company’s application.</p>
                 <p>I am passionate about learning and building user-friendly web solutions and dynamic Excel solutions that make a difference in users' lives.</p>
                 <div class="skills-section">
                     <h3 class="skills-title">My Skills</h3>
-                    <div class="skill-item">
-                        <div class="skill-label"><span>HTML & CSS</span><span>85%</span></div>
-                        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-label"><span>Front-End Developer</span><span>90%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="90%"></div></div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-label"><span>JavaScript</span><span>60%</span></div>
-                        <div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div>
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="150">
+                        <div class="skill-label"><span>Social Media Management</span><span>80%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width:80%" data-width=80%"></div></div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-label"><span>Figma / UI Design</span><span>80%</span></div>
-                        <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-label"><span>UI/UX Designer</span><span>80%</span></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="80%"></div></div>
                     </div>
-                    <div class="skill-item">
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="250">
                         <div class="skill-label"><span>VBA / Excel / Power BI / Microsoft Lists</span><span>65%</span></div>
-                        <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+                        <div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="65%"></div></div>
                     </div>
                 </div>
             </div>
-            <div class="about-buttons">
+            <div class="about-buttons" data-aos="fade-up" data-aos-delay="300">
                 <a href="#contact" class="btn">Hire Me</a>
                 <a href="#" class="btn btn-outline2">Download CV</a>
             </div>
             <h3 class="socials-header">Social Media</h3>
             <div class="socials">
-                <a href="https://github.com/EljenMae"><i class='bx bxl-github'></i></a>
-                <a href="https://dribbble.com/Eljen"><i class='bx bxl-dribbble'></i></a>
-                <a href="https://www.behance.net/eljenmaeaugusto"><i class='bx bxl-behance'></i></a>
-                <a href="https://www.linkedin.com/in/eljen-mae-augusto-547600261/"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/EljenMae" data-aos="zoom-in" data-aos-delay="100"><i class='bx bxl-github'></i></a>
+                <a href="https://dribbble.com/Eljen" data-aos="zoom-in" data-aos-delay="150"><i class='bx bxl-dribbble'></i></a>
+                <a href="https://www.behance.net/eljenmaeaugusto" data-aos="zoom-in" data-aos-delay="200"><i class='bx bxl-behance'></i></a>
+                <a href="https://www.linkedin.com/in/eljen-mae-augusto-547600261/" data-aos="zoom-in" data-aos-delay="250"><i class='bx bxl-linkedin'></i></a>
             </div>
         </div>
     </div>
@@ -107,26 +116,26 @@
 
    <!--Services-->
    <section class="services" id="services">
-    <div class="heading">
+    <div class="heading" data-aos="fade-up">
         <h1>My <span>Services</span></h1>
     </div>
     <div class="services-container">
-        <div class="box">
+        <div class="box" data-aos="fade-up" data-aos-delay="100">
             <i class='bx bxl-figma'></i>
             <h2>Figma Designs</h2>
             <p>Creating intuitive, visually appealing, and user-friendly designs. From user research and wireframing to high-fidelity mockups and prototypes, I focus on delivering seamless, functional, and engaging experiences tailored to meet user needs.</p>
         </div>
-        <div class="box">
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
             <i class='bx bx-code'></i>
             <h2>Front-End Development</h2>
             <p>Building responsive, interactive, and user-friendly websites using HTML, CSS, and JavaScript. I ensure seamless, dynamic user experiences across devices, with a focus on clean code and performance optimization.</p>
         </div>
-        <div class="box">
+        <div class="box" data-aos="fade-up" data-aos-delay="200">
             <i class='bx bx-file'></i>
             <h2>Microsoft Office Automation</h2>
             <p>I create automated solutions using Power BI, Excel, and Microsoft Lists that make data entry easier, automate calculations, and help businesses manage and analyze their data more efficiently.</p>
         </div>
-        <div class="box">
+        <div class="box" data-aos="fade-up" data-aos-delay="250">
             <i class='bx bx-code'></i>
             <h2>Google Sheet Automation</h2>
             <p>I specialize in converting Microsoft Excel automation into Google Sheets, replicating formulas, calculations, design, and functionality so businesses can use their automated systems in a cloud-based environment.</p>
@@ -136,71 +145,82 @@
 
    <!--Portfolio-->
    <section class="portfolio" id="portfolio">
-    <div class="heading-portfolio">
+    <div class="heading-portfolio" data-aos="fade-up">
         <h1>My <span>Portfolio</span></h1>
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="design">UI/UX Design</button>
+            <button class="filter-btn" data-filter="excel">Excel Automation</button>
+        </div>
     </div>
     <div class="portfolio-container">
-        <div class="box">
-            <div class="box-img"><img src="img/image4.png" alt=""></div>
+        <div class="box" data-filter="web" data-aos="fade-up" data-aos-delay="100">
+            <div class="box-img"><img src="img/image4.png" alt="Coffee Shop Project"></div>
             <div class="content">
                 <a href="https://eljenmae.github.io/simple-website/"><i class='bx bx-link'></i></a>
                 <h3>Coffee Shop</h3>
+                <p class="project-tag">Web Development</p>
             </div>
         </div>
-        <div class="box">
-            <div class="box-img"><img src="img/image3.png" alt=""></div>
-            <div class="content"><a href="https://www.behance.net/gallery/204601833/Thesis-Barangay-Management-Prototype"><i class='bx bx-link'></i></a><h3>UI/UX Design: Barangay Thesis Barangay Management Prototype</h3></div>
+        <div class="box" data-filter="design" data-aos="fade-up" data-aos-delay="150">
+            <div class="box-img"><img src="img/image3.png" alt="Barangay Management"></div>
+            <div class="content">
+                <a href="https://www.behance.net/gallery/204601833/Thesis-Barangay-Management-Prototype"><i class='bx bx-link'></i></a>
+                <h3>Barangay Management Prototype</h3>
+                <p class="project-tag">UI/UX Design</p>
+            </div>
         </div>
-        <div class="box">
-            <div class="box-img"><img src="img/Still-creating-here.png" alt=""></div>
-            <div class="content"><a href="#"><i class='bx bx-link'></i></a><h3>Work 3</h3></div>
+        <div class="box coming-soon" data-filter="web" data-aos="fade-up" data-aos-delay="200">
+            <div class="box-img"><img src="img/Still-creating-here.png" alt="Coming Soon"></div>
+            <div class="content">
+                <span class="coming-badge">Coming Soon</span>
+                <h3>E-Commerce Platform</h3>
+                <p class="project-tag">Web Development</p>
+            </div>
         </div>
-        <div class="box">
-            <div class="box-img"><img src="img/Still-creating-here.png" alt=""></div>
-            <div class="content"><a href="#"><i class='bx bx-link'></i></a><h3>Work 4</h3></div>
+        <div class="box coming-soon" data-filter="design" data-aos="fade-up" data-aos-delay="250">
+            <div class="box-img"><img src="img/Still-creating-here.png" alt="Coming Soon"></div>
+            <div class="content">
+                <span class="coming-badge">Coming Soon</span>
+                <h3>Mobile App Design</h3>
+                <p class="project-tag">UI/UX Design</p>
+            </div>
         </div>
-        <div class="box">
-            <div class="box-img"><img src="img/Still-creating-here.png" alt=""></div>
-            <div class="content"><a href="#"><i class='bx bx-link'></i></a><h3>Work 5</h3></div>
-        </div>
-        <div class="box">
-            <div class="box-img"><img src="img/Still-creating-here.png" alt=""></div>
-            <div class="content"><a href="#"><i class='bx bx-link'></i></a><h3>Work 6</h3></div>
-        </div>
-        <div class="box">
-            <div class="box-img"><img src="img/Still-creating-here.png" alt=""></div>
-            <div class="content"><a href="#"><i class='bx bx-link'></i></a><h3>Work 7</h3></div>
-        </div>
-        <div class="box">
-            <div class="box-img"><img src="img/Still-creating-here.png" alt=""></div>
-            <div class="content"><a href="#"><i class='bx bx-link'></i></a><h3>Work 8</h3></div>
+        <div class="box coming-soon" data-filter="excel" data-aos="fade-up" data-aos-delay="300">
+            <div class="box-img"><img src="img/Still-creating-here.png" alt="Coming Soon"></div>
+            <div class="content">
+                <span class="coming-badge">Coming Soon</span>
+                <h3>Excel Dashboard</h3>
+                <p class="project-tag">Excel Automation</p>
+            </div>
         </div>
     </div>
    </section><!--End of Portfolio-->
 
    <!--Start of Contact-->
    <section class="contact" id="contact">
-    <div class="heading-contact">
+    <div class="heading-contact" data-aos="fade-up">
         <h1><span>Contact</span> Me</h1>
         <p class="contact-subtitle">Have a project in mind? Let's work together!</p>
     </div>
     <div class="contact-wrapper">
         <div class="contact-info">
-            <div class="info-card">
+            <div class="info-card" data-aos="fade-right" data-aos-delay="100">
                 <i class='bx bx-envelope'></i>
                 <div>
                     <h4>Email</h4>
                     <p><a href="mailto:eljen4545@gmail.com">eljen4545@gmail.com</a></p>
                 </div>
             </div>
-            <div class="info-card">
+            <div class="info-card" data-aos="fade-right" data-aos-delay="150">
                 <i class='bx bx-phone'></i>
                 <div>
                     <h4>Phone</h4>
                     <p>+639554616786</p>
                 </div>
             </div>
-            <div class="info-card">
+            <div class="info-card" data-aos="fade-right" data-aos-delay="200">
                 <i class='bx bx-map'></i>
                 <div>
                     <h4>Location</h4>
@@ -210,7 +230,7 @@
         </div>
 
         <!-- Right: form — name attributes MUST match EmailJS template variables -->
-        <div class="contact-form">
+        <div class="contact-form" data-aos="fade-left" data-aos-delay="100">
             <form id="contact-form">
                 <div class="form-row">
                     <input type="text"  id="from_name"  name="from_name"  placeholder="Your Full Name" required>
@@ -269,6 +289,8 @@
     <p>&#169; Eljen All Rights Reserved</p>
    </div>
 
+   <!-- AOS Script -->
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
    <script src="script.js"></script>
 </body>
 </html>

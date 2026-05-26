@@ -1,138 +1,178 @@
-// ===== NAVBAR TOGGLE =====
-let menu = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
-let header = document.querySelector('header');
+// Initialize AOS (Animate On Scroll)
+AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true
+});
 
-menu.onclick = () => {
-    menu.classList.toggle('bx-x');
+// ===== Mobile Menu Toggle =====
+const menuIcon = document.getElementById('menu-icon');
+const navbar = document.querySelector('.navbar');
+
+menuIcon.addEventListener('click', () => {
     navbar.classList.toggle('active');
-}
-window.onscroll = () => {
-    menu.classList.remove('bx-x');
-    navbar.classList.remove('active');
-}
-window.addEventListener('scroll', () => {
-    header.classList.toggle('shadow', window.scrollY > 0);
+    menuIcon.classList.toggle('bx-x');
 });
 
-
-// ===== EMAILJS CONTACT FORM =====
-const EMAILJS_PUBLIC_KEY   = 'NT2fNKhkTKi8nGIfI';
-const EMAILJS_SERVICE_ID   = 'service_5z1ymh2';
-const EMAILJS_TEMPLATE_ID  = 'template_7pn285r';  // Contact Us → sends to YOUR Gmail
-const EMAILJS_AUTOREPLY_ID = 'template_dbznf9r';  // Auto-Reply → sends to the SENDER
-
-// Initialize EmailJS
-emailjs.init(EMAILJS_PUBLIC_KEY);
-
-const contactForm = document.getElementById('contact-form');
-const sendBtn     = document.getElementById('send-btn');
-const btnText     = document.getElementById('btn-text');
-const feedback    = document.getElementById('form-feedback');
-
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const name    = document.getElementById('from_name').value.trim();
-    const email   = document.getElementById('from_email').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    if (!name || !email || !message) {
-        showFeedback('Please fill in all required fields.', 'error');
-        return;
-    }
-
-    // Loading state
-    sendBtn.disabled = true;
-    btnText.textContent = 'Sending...';
-    feedback.textContent = '';
-    feedback.className = 'form-feedback';
-
-    const templateParams = {
-        from_name:  name,
-        from_email: email,
-        subject:    document.getElementById('subject').value.trim(),
-        message:    message
-    };
-
-    // Send Template 1 → to YOUR Gmail (main one, must succeed)
-    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
-        .then(() => {
-            // ✅ Main email sent — show success immediately
-            showFeedback('✅ Message sent! I\'ll get back to you soon.', 'success');
-            contactForm.reset();
-
-            // Send auto-reply separately — silently, won't affect success message
-            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_AUTOREPLY_ID, templateParams)
-                .catch((err) => {
-                    // Auto-reply failed silently — user already sees success
-                    console.warn('Auto-reply failed:', err.text);
-                });
-        })
-        .catch((error) => {
-            console.error('EmailJS error status:', error.status);
-            console.error('EmailJS error text:', error.text);
-
-            if (error.status === 401) {
-                showFeedback('❌ Invalid Public Key — check your EmailJS account.', 'error');
-            } else if (error.status === 404) {
-                showFeedback('❌ Service or Template ID not found — double check them.', 'error');
-            } else if (error.status === 422) {
-                showFeedback('❌ Template variables mismatch — check {{from_name}}, {{from_email}}, {{subject}}, {{message}} in your templates.', 'error');
-            } else {
-                showFeedback('❌ Error ' + error.status + ': ' + error.text, 'error');
-            }
-        })
-        .finally(() => {
-            sendBtn.disabled = false;
-            btnText.textContent = 'Send Message';
-        });
-});
-
-function showFeedback(message, type) {
-    feedback.textContent = message;
-    feedback.className = 'form-feedback ' + type;
-}
-
-
-// ===== FOOTER EMAIL SUBSCRIPTION =====
-const EMAILJS_FOOTER_TEMPLATE_ID = 'YOUR_FOOTER_TEMPLATE_ID';
-
-const footerForm     = document.getElementById('footer-email-form');
-const footerInput    = document.getElementById('footer-email-input');
-const footerSendBtn  = document.getElementById('footer-send-btn');
-const footerFeedback = document.getElementById('footer-feedback');
-
-footerForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const email = footerInput.value.trim();
-    if (!email) {
-        showFooterFeedback('Please enter a valid email.', 'error');
-        return;
-    }
-
-    footerSendBtn.disabled = true;
-    footerFeedback.textContent = '';
-    footerFeedback.className = 'footer-feedback';
-
-    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_FOOTER_TEMPLATE_ID, {
-        subscriber_email: email
-    })
-    .then(() => {
-        showFooterFeedback('✅ Thanks! I\'ll be in touch soon.', 'success');
-        footerInput.value = '';
-    })
-    .catch((error) => {
-        console.error('Footer EmailJS error:', error);
-        showFooterFeedback('❌ Something went wrong. Try again.', 'error');
-    })
-    .finally(() => {
-        footerSendBtn.disabled = false;
+// Close menu when a link is clicked
+document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', () => {
+        navbar.classList.remove('active');
+        menuIcon.classList.remove('bx-x');
     });
 });
 
-function showFooterFeedback(message, type) {
-    footerFeedback.textContent = message;
-    footerFeedback.className = 'footer-feedback ' + type;
+// ===== Counter Animation =====
+const counters = document.querySelectorAll('.counter');
+const speed = 200;
+let hasAnimated = false;
+
+const runCounters = () => {
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const increment = target / speed;
+
+        const updateCount = () => {
+            const count = +counter.innerText;
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCount, 10);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        updateCount();
+    });
+};
+
+// Trigger counter animation when about section is in view
+const observerOptions = {
+    threshold: 0.5
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !hasAnimated) {
+            runCounters();
+            hasAnimated = true;
+        }
+    });
+}, observerOptions);
+
+const aboutSection = document.querySelector('.about');
+if (aboutSection) observer.observe(aboutSection);
+
+// ===== Animate Skill Bars =====
+const skillFills = document.querySelectorAll('.skill-fill');
+
+skillFills.forEach(fill => {
+    const width = fill.dataset.width || fill.getAttribute('data-width');
+    if (width) fill.style.width = width;
+});
+
+// ===== Portfolio Filter =====
+const filterBtns = document.querySelectorAll('.filter-btn');
+const portfolioBoxes = document.querySelectorAll('.portfolio-container .box');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        portfolioBoxes.forEach(box => {
+            if (filterValue === 'all' || box.getAttribute('data-filter') === filterValue) {
+                box.style.display = 'block';
+                box.style.animation = 'fadeIn 0.5s ease-in';
+            } else {
+                box.style.display = 'none';
+            }
+        });
+    });
+});
+
+// ===== Dark Mode Toggle =====
+const themeToggle = document.getElementById('theme-icon');
+const htmlElement = document.documentElement;
+
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
+htmlElement.setAttribute('data-theme', currentTheme);
+updateThemeIcon(currentTheme);
+
+themeToggle.addEventListener('click', () => {
+    const theme = htmlElement.getAttribute('data-theme');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    
+    htmlElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+});
+
+function updateThemeIcon(theme) {
+    if (theme === 'dark') {
+        themeToggle.classList.remove('bx-moon');
+        themeToggle.classList.add('bx-sun');
+    } else {
+        themeToggle.classList.remove('bx-sun');
+        themeToggle.classList.add('bx-moon');
+    }
 }
+
+// ===== EmailJS Integration =====
+emailjs.init('YOUR_PUBLIC_KEY_HERE'); // Replace with your actual EmailJS public key
+
+const contactForm = document.getElementById('contact-form');
+const sendBtn = document.getElementById('send-btn');
+const formFeedback = document.getElementById('form-feedback');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        sendBtn.disabled = true;
+        sendBtn.innerHTML = '<i class="bx bx-loader-circle"></i> Sending...';
+
+        const templateParams = {
+            from_name: document.getElementById('from_name').value,
+            from_email: document.getElementById('from_email').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value
+        };
+
+        emailjs.send('YOUR_SERVICE_ID_HERE', 'YOUR_TEMPLATE_ID_HERE', templateParams)
+            .then(() => {
+                formFeedback.textContent = '✅ Message sent successfully!';
+                formFeedback.style.color = '#00d4ff';
+                contactForm.reset();
+                sendBtn.disabled = false;
+                sendBtn.innerHTML = '<span>Send Message</span><i class="bx bx-send"></i>';
+                
+                setTimeout(() => {
+                    formFeedback.textContent = '';
+                }, 5000);
+            })
+            .catch(() => {
+                formFeedback.textContent = '❌ Failed to send message. Try again!';
+                formFeedback.style.color = '#ff6b6b';
+                sendBtn.disabled = false;
+                sendBtn.innerHTML = '<span>Send Message</span><i class="bx bx-send"></i>';
+            });
+    });
+}
+
+// ===== Smooth Scroll for Navigation =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    });
+});
