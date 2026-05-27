@@ -1,4 +1,4 @@
-// Initialize AOS (Animate On Scroll)
+// ===== Initialize AOS (Animate On Scroll) =====
 AOS.init({
     duration: 800,
     easing: 'ease-in-out',
@@ -29,13 +29,13 @@ let hasAnimated = false;
 
 const runCounters = () => {
     counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
+        const target = parseFloat(counter.getAttribute('data-target'));
         const increment = target / speed;
 
         const updateCount = () => {
-            const count = +counter.innerText;
+            const count = parseFloat(counter.innerText);
             if (count < target) {
-                counter.innerText = Math.ceil(count + increment);
+                counter.innerText = parseFloat((count + increment).toFixed(1));
                 setTimeout(updateCount, 10);
             } else {
                 counter.innerText = target;
@@ -46,10 +46,6 @@ const runCounters = () => {
 };
 
 // Trigger counter animation when about section is in view
-const observerOptions = {
-    threshold: 0.5
-};
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting && !hasAnimated) {
@@ -57,18 +53,28 @@ const observer = new IntersectionObserver((entries) => {
             hasAnimated = true;
         }
     });
-}, observerOptions);
+}, { threshold: 0.5 });
 
 const aboutSection = document.querySelector('.about');
 if (aboutSection) observer.observe(aboutSection);
 
-// ===== Animate Skill Bars =====
+// ===== Animate Skill Bars on Scroll =====
 const skillFills = document.querySelectorAll('.skill-fill');
 
-skillFills.forEach(fill => {
-    const width = fill.dataset.width || fill.getAttribute('data-width');
-    if (width) fill.style.width = width;
-});
+const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            skillFills.forEach(fill => {
+                const width = fill.dataset.width || fill.getAttribute('data-width');
+                if (width) fill.style.width = width;
+            });
+            skillObserver.disconnect(); // run once
+        }
+    });
+}, { threshold: 0.3 });
+
+const skillsSection = document.querySelector('.skills-section');
+if (skillsSection) skillObserver.observe(skillsSection);
 
 // ===== Portfolio Filter =====
 const filterBtns = document.querySelectorAll('.filter-btn');
@@ -85,9 +91,18 @@ filterBtns.forEach(btn => {
         portfolioBoxes.forEach(box => {
             if (filterValue === 'all' || box.getAttribute('data-filter') === filterValue) {
                 box.style.display = 'block';
-                box.style.animation = 'fadeIn 0.5s ease-in';
+                // Small delay lets display:block paint before opacity transitions
+                setTimeout(() => {
+                    box.style.opacity = '1';
+                    box.style.transform = 'scale(1)';
+                }, 10);
             } else {
-                box.style.display = 'none';
+                box.style.opacity = '0';
+                box.style.transform = 'scale(0.95)';
+                // Hide after transition finishes
+                setTimeout(() => {
+                    box.style.display = 'none';
+                }, 300);
             }
         });
     });
@@ -105,7 +120,7 @@ updateThemeIcon(currentTheme);
 themeToggle.addEventListener('click', () => {
     const theme = htmlElement.getAttribute('data-theme');
     const newTheme = theme === 'light' ? 'dark' : 'light';
-    
+
     htmlElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
     updateThemeIcon(newTheme);
@@ -149,7 +164,7 @@ if (contactForm) {
                 contactForm.reset();
                 sendBtn.disabled = false;
                 sendBtn.innerHTML = '<span>Send Message</span><i class="bx bx-send"></i>';
-                
+
                 setTimeout(() => {
                     formFeedback.textContent = '';
                 }, 5000);
@@ -162,17 +177,3 @@ if (contactForm) {
             });
     });
 }
-
-// ===== Smooth Scroll for Navigation =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== '#') {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    });
-});

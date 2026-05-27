@@ -24,6 +24,7 @@
     --light-color:#fbf8f5;
     --pink-color:#e9598d;
     --dark-color: #1a1a2e;
+    --text-color: #ffffff;
 }
 section {
     padding: 50px 10%;
@@ -222,8 +223,9 @@ header.shadow {
     text-align: center;
 }
 .heading span{
-    border-bottom: 3px solid var(--light-color);
+    border-bottom: 3px solid var(--pink-color);
 }
+
 .heading h1 {
     font-size: 1.7rem;
     font-weight: bolder;
@@ -287,12 +289,21 @@ header.shadow {
     min-height: 97vh;
     background-color: var(--light-color);
 }
+html[data-theme="dark"] .portfolio {
+    background-color: var(--dark-color);
+}
 .heading-portfolio {
     text-align: center;
     color: var(--background-color);
 }
+html[data-theme="dark"] .heading-portfolio  {
+    color: var(--pink-color);
+}
 .heading-portfolio span{
     border-bottom: 3px solid var(--background-color);
+}
+html[data-theme="dark"] .heading-portfolio span {
+    border-bottom: 3px solid var(--pink-color);
 }
 .portfolio-container {
     display: grid;
@@ -938,12 +949,16 @@ html[data-theme="dark"] .services .box p {
     margin-top: 30px;
     margin-bottom: 40px;
     flex-wrap: wrap;
+    background: transparent;
+}
+html[data-theme="dark"] .portfolio-filter {
+    background: var(--dark-color);
 }
 
 .filter-btn {
     padding: 10px 20px;
-    border: 2px solid var(--accent-color);
-    background: transparent;
+    border: 2px solid var(--pink-color);
+    background: var(--light-color);
     color: var(--text-color);
     border-radius: 25px;
     cursor: pointer;
@@ -951,35 +966,32 @@ html[data-theme="dark"] .services .box p {
     font-weight: 500;
     font-size: 14px;
 }
+html[data-theme="dark"] .filter-btn {
+    background: var(--dark-color);
+}
+
 
 .filter-btn:hover {
-    background: var(--accent-color);
-    color: #000;
-    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+    background: var(--pink-color);
+    color: var(--light-color);
+    box-shadow: 0 5px 15px var(--pink-color);
     transform: translateY(-2px);
 }
 
 .filter-btn.active {
-    background: var(--accent-color);
-    color: #000;
-    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+    background: var(--pink-color);
+    color: var(--light-color);
+    box-shadow: 0 5px 15px var(--pink-color);
 }
+html[data-theme="dark"] .filter-btn.active {
+    background: var(--pink-color);
+}
+
 
 /* ===== PORTFOLIO BOXES ENHANCEMENT ===== */
-.portfolio .box {
-    background: var(--card-bg);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.portfolio .box .content {
-    position: relative;
-}
-
 .project-tag {
     font-size: 12px;
-    color: var(--accent-color);
+    color: var(--pink-color);
     margin-top: 8px;
     font-weight: 600;
     text-transform: uppercase;
@@ -990,7 +1002,7 @@ html[data-theme="dark"] .services .box p {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: linear-gradient(135deg, var(--accent-color), #00a8cc);
+    background: linear-gradient(135deg, var(--pink-color), #ff9ab0);
     color: #000;
     padding: 8px 12px;
     border-radius: 20px;
@@ -1001,15 +1013,17 @@ html[data-theme="dark"] .services .box p {
 }
 
 @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 10px rgba(0, 212, 255, 0.5); }
-    50% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.8); }
+    0%, 100% { box-shadow: 0 0 10px var(--pink-color); }
+    50% { box-shadow: 0 0 20px var(--pink-color); }
 }
 
 .portfolio .box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);
+    transform: translateY(-10px) scale(1) !important;
+    box-shadow: 0 15px 40px var(--pink-color);
 }
-
+.portfolio-container .box {
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
 /* ===== SKILL BARS WITH ANIMATION ===== */
 .skill-item {
     margin-bottom: 20px;
