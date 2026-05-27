@@ -236,6 +236,7 @@ header.shadow {
     margin-top: 2rem;
     padding-bottom: 2rem;
 }
+
 .services-container .box {
     text-align: center;
     border: 2px solid var(--pink-color);
@@ -243,6 +244,7 @@ header.shadow {
     border-radius: 0 2rem 0 0;
     box-shadow: 10px 11px 11px rgb(14 55 54 / 15%);
 }
+
 .services-container .box:hover {
     background: var(--light-color);
     color: var(--pink-color);
@@ -255,6 +257,7 @@ header.shadow {
     background: var(--pink-color);
     border-radius: 4px;
 }
+
 .services-container .box:hover .bx{
     color: var(--light-color);
     background: var(--pink-color);
@@ -264,26 +267,18 @@ header.shadow {
     font-size: 1.1rem;
     margin: 1rem 0 0.5rem;  
 }
-html[data-theme="dark"] .services-container .box h2{
-    color: var(--pink-color);
-}
 .services-container .box:hover h2{
-    color: var(--pink-color);
+    color: var(--dark-color);
 }
 
 .services-container .box p{
     color: var(--dark-color);
 }
-html[data-theme="dark"] .services-container .box p {
-    color: var(--light-color);
-}
 
 .services-container .box:hover p{
     color: var(--dark-color);
 }
-html[data-theme="dark"] .services-container .box:hover p {
-    color: var(--dark-color);
-}
+
 .services-container .box i{
     color: var(--light-color);
 }
@@ -876,11 +871,14 @@ html {
 
 /* ===== SERVICE CARDS HOVER EFFECTS ===== */
 .services .box {
-    background: var(--dark-color);
+    background: var(--light-color);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     border: 2px solid transparent;
+}
+html[data-theme="dark"] .services .box {
+    background: var(--dark-color);
 }
 
 .services .box::before {
@@ -902,6 +900,7 @@ html {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px var(--pink-color);
     border-color: var(--pink-color);
+    
 }
 
 .services .box i {
@@ -916,12 +915,20 @@ html {
 
 .services .box h2 {
     transition: color 0.3s ease;
+    
 }
-
+html[data-theme="dark"] .services .box h2 {
+    color: var(--pink-color);
+}
 .services .box:hover h2 {
+    color: var(--pink-color);
+}
+html[data-theme="dark"] .services .box:hover h2 {
+    color: var(--pink-color);
+}
+html[data-theme="dark"] .services .box p {
     color: var(--light-color);
 }
-
 
 /* ===== PORTFOLIO FILTER BUTTONS ===== */
 .portfolio-filter {
